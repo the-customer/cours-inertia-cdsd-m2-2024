@@ -26,10 +26,10 @@ import { ref } from "vue";
 //     nom.value = "Toto";
 // }, 5000);
 
-let cpt = ref(0);
-setInterval(() => {
-    cpt.value++;
-},1000);
+// let cpt = ref(0);
+// setInterval(() => {
+//     cpt.value++;
+// },1000);
 
 </script>
 
