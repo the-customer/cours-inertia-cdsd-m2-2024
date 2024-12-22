@@ -19,26 +19,20 @@
 </template>
 
 <script setup>
-import { reactive } from "vue";
-import { router } from "@inertiajs/vue3";
+import { useForm } from "@inertiajs/vue3";
 
 
-const formCat = reactive({
+const formCat = useForm({
     name: '',
-    description: '',
-    // slug:null
+    description: ''
 });
 
 
-// const onCreate = function(){};
-// function onCreate() {}
 const onCreate = () => {
-    //Creer le slug :
-    // formCat.slug = formCat.name.toLowerCase().replace(/\s+/g, '-');
     if (formCat.name.trim() == '' || formCat.description.trim() == '') {
         alert('Veuillez remplir tous les champs.');
         return;
     }
-    router.post('/categories',formCat);
+    formCat.post('/categories');
 };
 </script>

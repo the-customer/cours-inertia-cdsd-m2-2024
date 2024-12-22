@@ -43,7 +43,7 @@ class CategoryController extends Controller
         $data['slug'] = Str::slug($data['name']).'-'.date('dmYhis');
         Category::create($data);
 
-        return redirect()->route('categories.index');
+        return redirect()->route('categories.index')->with('success','La categorie est enregistree aves succces!');
     }
 
     /**
