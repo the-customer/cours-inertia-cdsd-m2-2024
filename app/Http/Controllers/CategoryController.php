@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Str;
 
 class CategoryController extends Controller
 {
@@ -23,7 +24,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return inertia('Category/Create');
     }
 
     /**
@@ -31,7 +32,18 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        // Category::create([
+        //     'name'          => 'Telephone',
+        //     'slug'          => 'telephone',
+        //     'description'   => 'La téléphonie mobile, ou téléphonie cellulaire est un moyen de télécommunication, plus précisément de radiocommunication, par téléphone mobile.'
+        // ]);
+        $data = $request->all();
+        //add slug:
+        $data['slug'] = Str::slug($data['name']);
+        Category::create($data);
+
+        return redirect()->route('categories.index');
     }
 
     /**
