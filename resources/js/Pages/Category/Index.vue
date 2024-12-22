@@ -3,7 +3,7 @@
         <h1>Liste des categories:</h1>
         <ul>
             <li v-for="cat in categories" :key="cat.id">
-                <Link :href="`/categories/${cat.id}`">
+                <Link :href="`/categories/${cat.slug}`">
                     {{ cat.name }}
                 </Link>
             </li>

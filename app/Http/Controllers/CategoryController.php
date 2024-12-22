@@ -40,7 +40,7 @@ class CategoryController extends Controller
         // ]);
         $data = $request->all();
         //add slug:
-        $data['slug'] = Str::slug($data['name']);
+        $data['slug'] = Str::slug($data['name']).'-'.date('dmYhis');
         Category::create($data);
 
         return redirect()->route('categories.index');
@@ -49,11 +49,11 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $slug)
     {
         // $category = Category::where('id', $id)->first();
         $data = [
-            'category'  => Category::find($id)
+            'category'  => Category::where('slug', $slug)->firstOrFail(),
         ];
         return inertia('Category/Show',$data);
     }
