@@ -5,14 +5,35 @@
             <br>
             <Link class="lien" href="/show">Page Show</Link>
             <br>
+            <h1>Vous venez de passer <code>{{ cpt }}s</code> dans l'application</h1>
             <br>
         </div>
         <slot></slot>
     </div>
 </template>
+
+
+
+
 <script setup>
 import { Link } from "@inertiajs/vue3";
+import { ref } from "vue";
+
+// const nom = "Tata";
+// const nom = ref("Tata");
+// setTimeout(() => {
+//     alert("Modification")
+//     nom.value = "Toto";
+// }, 5000);
+
+let cpt = ref(0);
+setInterval(() => {
+    cpt.value++;
+},1000);
+
 </script>
+
+
 
 <style scoped>
 .nav{
@@ -26,5 +47,9 @@ import { Link } from "@inertiajs/vue3";
     color: white;
     text-decoration: none;
     padding: 10px;
+}
+code{
+    background-color: rgb(237, 0, 0);
+    padding: 5px;
 }
 </style>
