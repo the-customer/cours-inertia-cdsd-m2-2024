@@ -21,4 +21,9 @@ class HomeController extends Controller
     {
         return  inertia('Index/Show');
     }
+
+    public function example()
+    {
+        return inertia('Index/Example');
+    }
 }
