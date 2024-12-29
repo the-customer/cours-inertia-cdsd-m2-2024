@@ -17,13 +17,4 @@ class HomeController extends Controller
         ]);
     }
 
-    public function show()
-    {
-        return  inertia('Index/Show');
-    }
-
-    public function example()
-    {
-        return inertia('Index/Example');
-    }
 }
