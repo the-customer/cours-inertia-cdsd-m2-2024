@@ -14,7 +14,7 @@
                 <small>{{formCat.errors.description}}</small>
             </div>
             <br>
-            <button>Enregister</button>
+            <button class=" border-gray-600 border rounded-lg p-2">Enregister</button>
             <!-- <button
                 @click="onCreate()"
                 type="button"

@@ -1,7 +1,7 @@
 <template>
     <div>
-        <h1>
-            Details Categorie: 
+        <div>
+            <span>Details Categorie: </span>
             <Link class="link" :href="route('categories.edit',category.slug)">
                 Editer
             </Link> 
@@ -10,7 +10,7 @@
                 method="delete"
                 class="danger link" 
                 :href="route('categories.destroy',category.slug)">Supprimer</Link> 
-        </h1>
+        </div>
         <h4>Nom : </h4>
         <p>
             {{ category.name }}

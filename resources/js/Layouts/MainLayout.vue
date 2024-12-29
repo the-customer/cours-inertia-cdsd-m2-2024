@@ -3,8 +3,6 @@
         <div class="nav">
             <Link class="lien" :href="route('home.index')">Page Index</Link>
             <br>
-            <Link class="lien" :href="route('home.show')">Page Show</Link>
-            <br>
             <Link class="lien" :href="route('categories.index')">Liste des Categories</Link>
             <br>
             <Link class="lien" :href="route('categories.create')">Nouvelle Categorie</Link>
@@ -12,10 +10,13 @@
             <h1>Vous venez de passer <code>{{ cpt }}s</code> dans l'application</h1>
             <br>
         </div>
-        <p class="alert-success" v-if="page.props.flash.success">
-            {{ page.props.flash.success }}
-        </p>
-        <slot></slot>
+        
+        <div class=" px-20 py-4">
+            <p class="alert-success" v-if="page.props.flash.success">
+                {{ page.props.flash.success }}
+            </p>
+            <slot></slot>
+        </div>
     </div>
 </template>
 
