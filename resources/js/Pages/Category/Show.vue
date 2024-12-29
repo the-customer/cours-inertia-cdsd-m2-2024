@@ -1,6 +1,16 @@
 <template>
     <div>
-        <h1>Details Categorie: <Link :href="`/categories/${category.slug}/edit`">Editer</Link> </h1>
+        <h1>
+            Details Categorie: 
+            <Link class="link" :href="route('categories.edit',category.slug)">
+                Editer
+            </Link> 
+            <Link 
+                as="button"
+                method="delete"
+                class="danger link" 
+                :href="route('categories.destroy',category.slug)">Supprimer</Link> 
+        </h1>
         <h4>Nom : </h4>
         <p>
             {{ category.name }}
@@ -21,16 +31,25 @@ defineProps({
 </script>
 
 <style scoped>
-a{
+.link{
     color: orange;
     text-decoration: none;
     padding: 5px;
     font-size: 1rem;
     border: 1px solid orange;
     border-radius: 5px;
+    margin-right: 5px;
 }
-a:hover{
+.link:hover{
     background-color: orange;
+    color: white;
+}
+.danger{
+    color: red;
+    border: 1px solid red;
+}
+.danger:hover{
+    background-color: red;
     color: white;
 }
 </style>

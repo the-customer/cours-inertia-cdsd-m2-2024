@@ -32,7 +32,10 @@ const formEdit = useForm({
 });
 
 const onEdit = () => {
-    formEdit.put(`/categories/${props.category.slug}`);
+    // formEdit.put(`/categories/${props.category.slug}`);
+    formEdit.put(route('categories.update', props.category.slug));
+    // formEdit.put(route('categories.update', {category: props.category.slug}));
+    // formEdit.put(route('categories.update', [props.category.slug]));
 }
 </script>
 

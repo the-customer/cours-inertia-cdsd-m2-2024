@@ -1,13 +1,13 @@
 <template>
     <div>
         <div class="nav">
-            <Link class="lien" href="/">Page Index</Link>
+            <Link class="lien" :href="route('home.index')">Page Index</Link>
             <br>
-            <Link class="lien" href="/show">Page Show</Link>
+            <Link class="lien" :href="route('home.show')">Page Show</Link>
             <br>
-            <Link class="lien" href="/categories">Liste des Categories</Link>
+            <Link class="lien" :href="route('categories.index')">Liste des Categories</Link>
             <br>
-            <Link class="lien" href="/categories/create">Nouvelle Categorie</Link>
+            <Link class="lien" :href="route('categories.create')">Nouvelle Categorie</Link>
             <br>
             <h1>Vous venez de passer <code>{{ cpt }}s</code> dans l'application</h1>
             <br>

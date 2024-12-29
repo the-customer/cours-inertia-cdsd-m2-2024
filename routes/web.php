@@ -18,4 +18,5 @@ Route::get('/example',[HomeController::class,'example'])->name('home.example');
 
 Route::resource('/articles',ArticleController::class)->only(['index','show']);
 
-Route::resource('/categories',CategoryController::class)->except(['destroy']);
+// Route::resource('/categories',CategoryController::class)->except(['destroy']);
+Route::resource('/categories',CategoryController::class);

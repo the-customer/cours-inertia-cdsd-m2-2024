@@ -35,7 +35,7 @@ const formCat = useForm({
 
 
 const onCreate = () => {
-    formCat.post('/categories');
+    formCat.post(route('categories.store'));
 };
 </script>
 
