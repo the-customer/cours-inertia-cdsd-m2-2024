@@ -14,7 +14,10 @@ class CategoryController extends Controller
     public function index()
     {
         $data = [
-            'categories' => Category::all()
+            // 'categories' => Category::all()
+            // 'categories' => Category::orderBy('name','desc')->get(),
+            // 'categories' => Category::orderBy('name','asc')->get(),
+            'categories' => Category::orderBy('name')->get(),
         ];
         return inertia('Category/Index',$data);
     }
