@@ -5,6 +5,8 @@
             <br>
             <Link class="lien" href="/show">Page Show</Link>
             <br>
+            <Link class="lien" href="/categories">Liste des Categories</Link>
+            <br>
             <Link class="lien" href="/categories/create">Nouvelle Categorie</Link>
             <br>
             <h1>Vous venez de passer <code>{{ cpt }}s</code> dans l'application</h1>

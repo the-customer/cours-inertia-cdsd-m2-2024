@@ -4,9 +4,15 @@
         <form @submit.prevent="onCreate()">
             <label for="name">Nom:</label>
             <input type="text" id="name" v-model="formCat.name" />
+            <div v-if="formCat.errors.name">
+                <small>{{ formCat.errors.name }}</small>
+            </div>
             <br>
             <label for="description">Description:</label>
-            <textarea id="description" v-model="formCat.description"></textarea>
+            <textarea id="description" v-model="formCat.description" cols="50" rows="5"></textarea>
+            <div v-if="formCat.errors.description">
+                <small>{{formCat.errors.description}}</small>
+            </div>
             <br>
             <button>Enregister</button>
             <!-- <button
@@ -29,10 +35,12 @@ const formCat = useForm({
 
 
 const onCreate = () => {
-    if (formCat.name.trim() == '' || formCat.description.trim() == '') {
-        alert('Veuillez remplir tous les champs.');
-        return;
-    }
     formCat.post('/categories');
 };
 </script>
+
+<style scoped>
+small{
+    color: red;
+}
+</style>
