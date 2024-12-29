@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="w-full">
         <div>
             <span>Details Categorie: </span>
             <Link class="link" :href="route('categories.edit',category.slug)">

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="w-full">
         <h1>Editer une Categorie</h1>
         <form @submit.prevent="onEdit()">
             <label for="name">Nom:</label>
