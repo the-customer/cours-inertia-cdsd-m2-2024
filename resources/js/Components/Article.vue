@@ -7,9 +7,9 @@
                     <p class="text-sm text-gray-600">Posted 1 hour ago</p>
                 </div>
             </div>
-            <h3 class="text-gray-900 text-2xl"> Article's title </h3>
-            <p class="mb-4 text-gray-700"> {{ article.content }} </p>
-            <img class="w-full h-72 object-cover mb-4" :src="article.image" alt="">
+            <h3 class="text-gray-900 text-2xl"> {{article.name}} </h3>
+            <p class="mb-4 text-gray-700"> {{ article.description }} </p>
+            <img class="w-full h-72 object-cover mb-4" :src="`/storage/${article.image}`" alt="">
             <div class="flex items-center justify-between space-x-2">
                 <button class="flex items-center space-x-2">
                     <span>👍</span>

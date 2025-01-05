@@ -11,7 +11,7 @@ Route::get('/',[HomeController::class,'index'])->name('home.index');
 
 Route::get('/show',[HomeController::class,'show'])->name('home.show');
 
-Route::resource('/articles',ArticleController::class)->only(['index','show']);
+Route::resource('/articles',ArticleController::class)->only(['index','show','store']);
 
 // Route::resource('/categories',CategoryController::class)->except(['destroy']);
 Route::resource('/categories',CategoryController::class);

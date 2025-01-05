@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use Illuminate\Http\Request;
+use Str;
 
 class ArticleController extends Controller
 {
@@ -27,7 +29,27 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
+        $data = $request->validate([
+            "title"=> "required|min:5",
+            "body"=> "required|min:10",
+            "image"=> "required|image|file",
+            "category_id" => "required"
+        ]);
+        $slug = Str::slug($data['title']).'-'.date('dmYhis');
+        //Engeristrer l'image dans le dossier images
+        // $path = $request->file("image")->store("images","public");
+        $path = $request->file("image")->storeAs("images",$slug.".jpg","public");
+
+        //Enregistrer l'article dans la base de données
+        Article::create([
+            "name"          => $data["title"],
+            "description"   => $data["body"],
+            "image"         => $path,
+            "category_id"   => $data["category_id"],
+            "slug"          => $slug
+        ]);
         //
+        return redirect()->route("home.index")->with("success","");
     }
 
     /**

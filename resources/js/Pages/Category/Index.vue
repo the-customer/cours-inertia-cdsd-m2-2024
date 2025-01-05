@@ -1,6 +1,9 @@
 <template>
     <div>
-        <h1 class="text-3xl font-bold ml-4 border-b-2 mb-4">Liste des categories:</h1>
+        <h1 class="text-3xl font-bold ml-4 border-b-2 mb-4 flex justify-between items-center py-2">
+            Liste des categories: 
+            <Link class="text-sm bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" :href="`/categories/create`">+</Link>
+        </h1>
         <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
             <Link 
                 v-for="cat in categories" :key="cat.id"
